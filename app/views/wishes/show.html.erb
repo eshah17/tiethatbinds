@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<P>Wishes from <%= @wish.name  %></p><br />
+
+<%= @wish.wish %><br />
+<%= link_to 'Edit', edit_wish_path(@wish) %> |
+<%= link_to 'Back', wishes_path %>
+
