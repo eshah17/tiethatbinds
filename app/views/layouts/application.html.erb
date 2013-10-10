@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Tie That Bind US</a>
+        <ul class="nav">
+          <li class="active">
+            <%= link_to "Wishes" , wishes_path %>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <!--Sidebar content-->
+          <img src ="http://images1.wikia.nocookie.net/__cb20110804144906/random-ness/images/6/6c/183px-Ash_Ketchum_BW.png">
+      </div>
+      <div class ="span8">
+          <%= yield %>
+      </div>
+    </div>
+  </div>    
 </body>
 </html>

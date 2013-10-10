@@ -1,21 +1,21 @@
-<h1>Listing wishes</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="page-header">
+  <h2>Wishes from Family & Friends! <h2>
+</div>
+<div class="new-wish">
+<%= link_to "Add your Wish", new_wish_path , class: "btn btn-danger" %>
+</div>
 
 <% @wishes.each do |wish| %>
-  <tr>
-    <td><%= link_to 'Show', wish %></td>
-    <td><%= link_to 'Edit', edit_wish_path(wish) %></td>
-    <td><%= link_to 'Destroy', wish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="wish">
+  <strong>Wish from <%= wish.name %></strong>
+  <p><%= wish.wish %></p>
+<div class="meta">
+<%= link_to time_ago_in_words(wish.created_at) + " ago", wish %>
+<span class="admin">
+  | <%= link_to "Edit", edit_wish_path(wish) %> |
+  <%= link_to "Delete", wish , method: :delete , data: {confirm: "Are you sure you want to delete?"} %>
+</span>
+</div>
+</div>
 
-<br />
-
-<%= link_to 'New Wish', new_wish_path %>
+<% end%>
