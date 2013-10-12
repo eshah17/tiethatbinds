@@ -1,5 +1,10 @@
 Tiethatbinds::Application.routes.draw do
+  devise_for :views
+
+  devise_for :users
+
   resources :wishes
+  root :to => "wishes#index"
 
 
   # The priority is based upon order of creation:
