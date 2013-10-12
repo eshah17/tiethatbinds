@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131012222901) do
+ActiveRecord::Schema.define(:version => 20131012225312) do
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -55,8 +55,10 @@ ActiveRecord::Schema.define(:version => 20131012222901) do
   create_table "wishes", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "name"
     t.string   "wish"
+    t.integer  "user_id"
   end
+
+  add_index "wishes", ["user_id"], :name => "index_wishes_on_user_id"
 
 end
