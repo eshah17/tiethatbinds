@@ -2,12 +2,12 @@
   <h2>Wishes from Family & Friends! <h2>
 </div>
 <div class="new-wish">
-<%= link_to "Add your Wish", new_wish_path , class: "btn btn-danger" %>
+<%= link_to "Make-A-Wish", new_wish_path , class: "btn btn-danger" %>
 </div>
 
 <% @wishes.each do |wish| %>
 <div class="wish">
-  <strong>Wish from <%= wish.name %></strong>
+  <strong> From: <%= wish.user.full_name %></strong>
   <p><%= wish.wish %></p>
 <div class="meta">
 <%= link_to time_ago_in_words(wish.created_at) + " ago", wish %>

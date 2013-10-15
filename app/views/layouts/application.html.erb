@@ -10,11 +10,20 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <a class="brand" href="#">Tie That Bind US</a>
-        <ul class="nav">
-          <li class="active">
-            <%= link_to "Wishes" , wishes_path %>
-          </li>
-        </ul>
+      <ul class="nav">
+        <li class="active">
+          <%= link_to "Wishes" , wishes_path %>
+        </li>
+      </ul>
+      <ul class="nav pull-right">
+        <% if user_signed_in? %>
+        <li><%= link_to current_user.full_name, edit_user_registration_path %></li>
+        <li><%= link_to "Sign Out",destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Register" , new_user_registration_path %></li>
+        <li><%= link_to "Sign In",user_session_path %>
+        <% end %>
+      </ul>
     </div>
   </div>
   <div class="container-fluid">
@@ -23,10 +32,10 @@
     <div class="row-fluid">
       <div class="span2">
         <!--Sidebar content-->
-          <img src ="http://images1.wikia.nocookie.net/__cb20110804144906/random-ness/images/6/6c/183px-Ash_Ketchum_BW.png">
+        <img src ="http://farm6.staticflickr.com/5185/5567129896_7e51aaa0cb_z.jpg">
       </div>
       <div class ="span8">
-          <%= yield %>
+        <%= yield %>
       </div>
     </div>
   </div>    

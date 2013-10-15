@@ -1,4 +1,4 @@
-<%= form_for(@wish) do |f| %>
+<%= simple_form_for(@wish, html: {class: 'form-horizontal'}) do |f| %>
   <% if @wish.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@wish.errors.count, "error") %> prohibited this wish from being saved:</h2>
@@ -9,20 +9,11 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
-
-	<div class ="field">
-	<%= f.label :name %><br />
-	<%= f.text_field :name%>
-	</div>
-	
-	</div class ="field">
-	<%= f.label :wish %><br />
-	<%= f.text_area :wish %>
-	</div>
-
+  <% end %> 
+	<%= f.input :user_id, collection: User.all,label_method: :full_name %>
+	<%= f.input :wish %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
 <% end %>
 
