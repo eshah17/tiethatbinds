@@ -24,11 +24,14 @@ class WishesController < ApplicationController
   # GET /wishes/new
   # GET /wishes/new.json
   def new
-    @wish = Wish.new
-
-    respond_to do |format|
+    if user_signed_in? 
+      @wish = Wish.new
+      respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @wish }
+    end
+    else 
+      redirect_to new_user_registration_path
     end
   end
 
@@ -81,3 +84,6 @@ class WishesController < ApplicationController
     end
   end
 end
+
+
+
