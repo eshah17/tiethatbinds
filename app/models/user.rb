@@ -8,8 +8,22 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me ,:first_name,:last_name,:profile_name
   # attr_accessible :title, :body
   
+#relationship between wishes and users table  
   has_many :wishes
   
+#validates firstname,lastname
+validates :first_name, presence: true  
+validates :last_name, presence: true 
+validates :email, presence: true 
+validates :profile_name, presence: true,
+                          uniqueness: true, 
+                          format:{
+                            with: /a-zA-Z0-9_-./,
+                            message: 'No space should be added'
+                            }
+                              
+
+#creating full_name method
   def full_name
     first_name + " " + last_name
   end
