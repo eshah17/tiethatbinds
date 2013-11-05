@@ -11,12 +11,28 @@
  *= require_self
  *= require_tree .
  */
-body{
-	padding-top : 40px;
-		
+
+body {
+	background-image: url('background.jpg');
+	background-size: cover;
+}
+.container1 {
+	background-color : rgba(255, 255, 253, 0.47);
+	margin: 0px auto;
+	width: 1024px;
+	
 }
 
-/*.span2{
-	background-image : url('ganpati.jpg');
-	background-size: ; 123px 183px;
-}*/
+.side {
+	float: left;
+	width: 300px;
+	position: relative;
+}
+.content{
+	width:640px;
+	display: inline-block;
+	position: relative;
+}
+.alert{
+	padding-top :100px;
+}

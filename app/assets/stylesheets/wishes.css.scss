@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.page-header{
-      font-family : Cursive;
-      padding-left: 30px;
-      text-align: center;
-}
 .new-wish{
     padding :20px 0;
 }
@@ -14,6 +9,7 @@
 .wish {
   border-bottom : solid 1px #CCC;
   padding : 5px 0;
+  align: right;
 }
 
 .wish p{
