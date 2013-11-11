@@ -2,20 +2,22 @@
   <h1>Wishes from Family & Friends! <h1>
 </div>
 <div class="new-wish">
-<%= link_to "Make-A-Wish", new_wish_path , class: "btn btn-danger" %>
+<%= link_to "Add your Message!", new_wish_path , class: "btn btn-danger" %>
 </div>
-
-<% @wishes.each do |wish| %>
-<div class="wish">
-  <strong> From: <%= wish.user.full_name %></strong>
-  <p><%= wish.wish %></p>
-<div class="meta">
-<%= link_to time_ago_in_words(wish.created_at) + " ago", wish %>
-<span class="admin">
-  | <%= link_to "Edit", edit_wish_path(wish) %> |
-  <%= link_to "Delete", wish , method: :delete , data: {confirm: "Are you sure you want to delete?"} %>
-</span>
+<div class="wish-collection">
+    <% @wishes.each do |wish| %>
+    <div class="wish">
+    <strong> From: <%= wish.user.full_name %></strong>
+    <p><%= simple_format(wish.wish) %></p>
+    <div class="meta">
+    <%= time_ago_in_words(wish.created_at) + " ago" %>
+    <% if current_user.try(:admin?) %>
+    <span class="admin">
+    <%= link_to "Edit", edit_wish_path(wish) %> |
+    <%= link_to "Delete", wish , method: :delete , data: {confirm: "Are you sure you want to delete?"} %>
+    </span>
+    <% end %>
+    </div>
+    </div>
+    <% end%>
 </div>
-</div>
-
-<% end%>

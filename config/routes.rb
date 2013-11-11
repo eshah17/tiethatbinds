@@ -5,7 +5,9 @@ Tiethatbinds::Application.routes.draw do
 
   resources :wishes
   root :to => "wishes#index"
-
+  
+  get "pages/about"
+  get "pages/events"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

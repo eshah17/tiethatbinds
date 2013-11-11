@@ -2,8 +2,7 @@ class WishesController < ApplicationController
   # GET /wishes
   # GET /wishes.json
   def index
-    @wishes = Wish.all
-
+    @wishes = Wish.all(:order => "created_at DESC")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @wishes }
@@ -44,7 +43,9 @@ class WishesController < ApplicationController
   # POST /wishes.json
   def create
     @wish = Wish.new(params[:wish])
-
+    # Added user_id to wish to display username
+    @wish.user_id = current_user.id
+    @wish.save
     respond_to do |format|
       if @wish.save
         format.html { redirect_to @wish, notice: 'Wish was successfully created.' }

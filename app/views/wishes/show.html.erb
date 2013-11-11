@@ -1,8 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<%= @wish.user.full_name %>
-<%= @wish.wish %><br />
-
-<%= link_to 'Edit', edit_wish_path(@wish) %> |
-<%= link_to 'Back', wishes_path %>
+<div class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <p id="notice"><%= notice %></p>
+  </div> 
+  <div class="modal-body">
+    <%= @wish.user.full_name %>
+    <%= simple_format(@wish.wish) %><br />  
+  </div>
+  <div class="modal-footer">
+      <button class="btn" aria-hidden="true" >
+        <%= link_to 'Close', wishes_path %>
+      </button>
+  </div>
+</div>
 

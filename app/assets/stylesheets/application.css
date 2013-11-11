@@ -12,26 +12,55 @@
  *= require_tree .
  */
 
-body {
+html,body {
 	background-image: url('background.jpg');
 	background-size: cover;
+	height:100%;
+	padding:0;
 }
 .container1 {
-	background-color : rgba(255, 255, 253, 0.47);
-	margin: 0px auto;
-	width: 1024px;
-	
+	background-color : rgba(255, 255, 253, 0.2);
+	margin: auto auto;
+	width: 950px;
+	min-height: 100%;	
 }
 
 .side {
 	float: left;
 	width: 300px;
 	position: relative;
+	font-family : cursive;
+	font-size: 20px;
+	padding: 50px 0;
 }
 .content{
 	width:640px;
 	display: inline-block;
 	position: relative;
+}
+.wish-collection{
+	width:640px;
+	display: inline-block;
+	position: relative;
+	overflow: scroll;
+	height: 450px;
+	margin-top: 30px;
+	border-top: 1px solid;
+	border-color: rgb(247, 242, 236);
+}
+.footer{
+	width: 1024px;
+	height: 100px;
+	margin-top: 50px;
+	position: relative;
+}
+
+#footer_content{
+	
+	font-family: Helvetica;
+	size: 20px;
+	text-align:center;
+	text-decoration: none;
 }
 .alert{
 	padding-top :100px;

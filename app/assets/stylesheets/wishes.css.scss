@@ -2,13 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.new-wish{
-    padding :20px 0;
-}
 
 .wish {
   border-bottom : solid 1px #CCC;
-  padding : 5px 0;
+  padding : 10px 10px;
   align: right;
 }
 
@@ -17,7 +14,7 @@
 }
 
 .wish.hover{
-  background : #FAFAFA
+  background : #E6F3FA;
 }
 .wish .admin{
   display :none;
@@ -26,3 +23,12 @@
 .wish.hover .admin{
   display :inline;
 }
+
+.meta{
+  color: #0088cc;
+}
+#wish_wish{
+  width:100%;
+  height: 100px;
+}
+
