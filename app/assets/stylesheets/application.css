@@ -19,7 +19,7 @@ html,body {
 	padding:0;
 }
 .container1 {
-	background-color : rgba(255, 255, 253, 0.2);
+	background-color : rgba(236, 236, 187, 0.6);
 	margin: auto auto;
 	width: 950px;
 	min-height: 100%;	
@@ -27,7 +27,7 @@ html,body {
 
 .side {
 	float: left;
-	width: 300px;
+	width: 250px;
 	position: relative;
 	font-family : cursive;
 	font-size: 20px;
@@ -64,4 +64,12 @@ html,body {
 }
 .alert{
 	padding-top :100px;
+}
+
+/* global header styles*/
+.header{
+	font-family: cursive;
+	margin: 5px;
+	margin-bottom: 20px;
+	padding: 10px;
 }

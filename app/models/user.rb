@@ -10,9 +10,7 @@ class User < ActiveRecord::Base
   
 #relationship between wishes and users table  
   has_many :wishes
-#relationship between rsvp and users table
-has_one :rsvps
-  
+    
 #validates firstname,lastname, email, profile_name
 validates :first_name, presence: true  
 validates :last_name, presence: true 

@@ -2,10 +2,11 @@ Tiethatbinds::Application.routes.draw do
   devise_for :views
 
   devise_for :users
+  match "events" => "pages#events", :as => :user
 
   resources :wishes
   root :to => "wishes#index"
-  
+    
   get "pages/about"
   get "pages/events"
 
